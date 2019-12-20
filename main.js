@@ -21,10 +21,15 @@ function getRandomUpper() {
  * Note: returns a String, not an Integer type
  */
 function getRandomNumber() {
-    //return Math.floor(Math.random() * 10);
     return String.fromCharCode(Math.floor(Math.random() * 10) + 48);
 }
 
-console.log(getRandomLower());
-console.log(getRandomUpper());
-console.log(getRandomNumber());
+/** 
+ * Generate random symbol
+ */
+ function getRandomSymbol() {
+     const symbols = '!@#$%^&*?';
+     return symbols[Math.floor(Math.random() * symbols.length)];
+ }
+
+ console.log(getRandomSymbol());
