@@ -8,6 +8,7 @@ const symbolBtn = document.getElementById('symbols');
 const generateBtn = document.getElementById('generate');
 const copyBtn = document.getElementById('clipboard');
 
+// Helper object used to easily select proper function
 const randomFunction = {
     lower: getRandomLower,
     upper: getRandomUpper,
@@ -106,6 +107,7 @@ function getRandomNumber() {
 
 /** 
  * Generate random symbol
+ * Indexes a random element from a string of symbols
  */
 function getRandomSymbol() {
     const symbols = '!@#$%^&*?';
