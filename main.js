@@ -1,10 +1,19 @@
 
 /**
  * Generates a random lower case letter
- * Uses the ASCII codes from 97-122 which are a-z respectively
+ * Uses the ASCII codes 97-122 which are a-z respectively
  */
 function getRandomLower() {
     return String.fromCharCode(Math.floor(Math.random() * 26) + 97);
 }
 
+/**
+ * Generates a random upper case letter
+ * Uses the ASCII codes 65-90 which are A-Z respectively
+ */
+function getRandomUpper() {
+    return String.fromCharCode(Math.floor(Math.random() * 26) + 65);
+}
+
 console.log(getRandomLower());
+console.log(getRandomUpper());
