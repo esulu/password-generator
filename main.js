@@ -25,6 +25,13 @@ generateBtn.addEventListener('click', function () {
     var hasNumber = numberBtn.checked;
     var hasSymbol = symbolBtn.checked;
 
+    // Sets bounds for the length of the password
+    if (length > 20) { 
+        length = 20;
+    } else if (length < 4) { 
+        length = 4;
+    }
+
     resultBox.innerText = generatePassword(length, hasUpper, hasLower, hasNumber, hasSymbol);
 });
 
