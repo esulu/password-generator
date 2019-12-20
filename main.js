@@ -51,8 +51,7 @@ function generatePassword(length, upper, lower, number, symbol) {
         passwordString += randomFunction[functionIndex](); // appends the string
     }
 
-    console.log(passwordString);
-
+    return passwordString;
 }
 
 /**
