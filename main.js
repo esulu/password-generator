@@ -16,7 +16,7 @@ const randomFunction = {
 };
 
 /**
- * Handler that parses the user specifications 
+ * Handler that parses the user specifications when generate button is clicked
  */
 generateBtn.addEventListener('click', function () {
     var length = parseInt(lengthField.value);
@@ -28,6 +28,32 @@ generateBtn.addEventListener('click', function () {
     resultBox.innerText = generatePassword(length, hasUpper, hasLower, hasNumber, hasSymbol);
 });
 
+/**
+ * Function that generates the password
+ */
+function generatePassword(length, upper, lower, number, symbol) {
+    let passwordString = '';
+
+    const checkedItems = upper + lower + number + symbol;
+
+    // Parses the elements into an array containing only those that are checked 
+    const itemsArr = [ { upper }, { lower }, { number }, { symbol } ].filter(item => Object.values(item)[0]);
+
+    // No fields selected
+    if (checkedItems === 0) {
+        return '';
+    }
+
+    // Constructs the password string
+    for(let i = 0; i < length; i++) {
+        var functionIndex = Object.keys( itemsArr[Math.floor(Math.random() * checkedItems)] )[0]; // selects one of the available queries 
+
+        passwordString += randomFunction[functionIndex](); // appends the string
+    }
+
+    console.log(passwordString);
+
+}
 
 /**
  * Generates a random lower case letter
