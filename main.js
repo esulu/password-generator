@@ -28,6 +28,24 @@ generateBtn.addEventListener('click', function () {
     resultBox.innerText = generatePassword(length, hasUpper, hasLower, hasNumber, hasSymbol);
 });
 
+// Copy password to clipboard
+clipboard.addEventListener('click', function() {
+    var textarea = document.createElement('textarea');
+    const password = result.innerText; // password contained in the inner text
+
+    if (!password) {
+        return;
+    }
+
+    textarea.value = password;
+    document.body.appendChild(textarea);
+    textarea.select();
+    document.execCommand('copy');
+    textarea.remove();
+    alert('Copied to clipboard');
+
+});
+
 /**
  * Function that generates the password
  */
